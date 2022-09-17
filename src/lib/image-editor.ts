@@ -18,7 +18,7 @@ export class ImageEditor {
   readonly canvas: HTMLCanvasElement;
   readonly context: CanvasRenderingContext2D;
   readonly originalImage: ImageBitmap;
-
+  
   constructor(readonly options: ImageEditorOptions) {
     this.canvas = options.canvas;
     const context = this.canvas.getContext("2d");

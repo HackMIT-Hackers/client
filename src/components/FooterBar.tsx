@@ -27,9 +27,7 @@ export function FooterBar() {
 
   return (
     <Footer height={60} className={classes.footer} p="md" >
-
         <Group position="right">
-            
             <TextInput
                 placeholder="Your prompt"
                 radius="md"
@@ -37,10 +35,7 @@ export function FooterBar() {
                 withAsterisk
             />
             <Button>Generate</Button>
-
         </Group>
-    
-        
     </Footer>
   );
 }

@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 import { ImageEditor } from "../lib/image-editor";
 import { Center } from "@mantine/core";
 import { useElementSize } from "@mantine/hooks";
+import { useToolSelect } from '../hooks/useToolSelect';
 
 export type PhotoEditDisplayProps = {
   file: File;
@@ -18,6 +19,8 @@ export function PhotoEditDisplay({ file }: PhotoEditDisplayProps) {
   const url = URL.createObjectURL(file);
   const canvasWidth = Math.floor(width * 0.9);
   const canvasHeight = Math.floor(height * 0.9);
+
+  const currentTool = useToolSelect(store => store.selectedTool);
 
   useEffect(() => {
     if (canvasRef.current !== null) {
