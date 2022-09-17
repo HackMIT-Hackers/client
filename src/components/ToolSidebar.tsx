@@ -25,8 +25,7 @@ const useStyles = createStyles((theme) => ({
 
   active: {
     '&, &:hover': {
-      backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
-      color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
+      color: theme.colors.green[1],
     },
   },
 }));
