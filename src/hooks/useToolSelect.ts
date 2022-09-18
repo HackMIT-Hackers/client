@@ -1,4 +1,4 @@
-import { IconHandStop, IconBrush, IconBucket, IconWand, IconRectangle, IconLasso, IconColorPicker, IconZoomIn } from "@tabler/icons";
+import { IconHandStop, IconBrush, IconBucket, IconWand, IconRectangle, IconLasso, IconColorPicker, IconZoomIn, IconQuestionMark} from "@tabler/icons";
 import create from "zustand";
 
 export const tools = [
@@ -10,6 +10,7 @@ export const tools = [
   { icon: IconLasso, label: 'Lasso Tool' },
   { icon: IconColorPicker, label: 'Color Picker' },
   { icon: IconZoomIn, label: 'Zoom In' },
+  { icon: IconQuestionMark, label: 'About'},
 ];
 
 interface ToolState {
