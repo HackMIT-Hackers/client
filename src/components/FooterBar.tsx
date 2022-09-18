@@ -17,6 +17,7 @@ import {
 import {ReactComponent as Logo} from '../assets/logo.svg';
 import { IconAdjustmentsHorizontal } from '@tabler/icons';
 import { useImageStore } from '../hooks/useImageStore';
+
 const useStyles = createStyles((theme) => ({
     footer: {
         padding: "10px !important"
@@ -32,7 +33,23 @@ const useStyles = createStyles((theme) => ({
     },
     input: {
       width: "40vw"
-    }
+    },
+    reload: {
+      '&:hover': {
+        color: theme.colors.green[1]
+      },
+    },
+    generate: {
+      '&:hover': {
+        color: theme.colors.green[0]
+      },
+    },
+    action: {
+      '&:hover': {
+        color: theme.colors.green[0],
+        backgroundColor: theme.colors.green[1]
+      },
+    },
   }),
 );
 
@@ -54,7 +71,7 @@ export function FooterBar({genImage}: FooterBarProps) {
             </Button> */}
             <Popover width={250} position="top" withArrow shadow="md">
               <Popover.Target>
-                <ActionIcon color="green.1" variant="filled">
+                <ActionIcon className={classes.action}color="green.1" variant="filled">
                   <IconAdjustmentsHorizontal />
                 </ActionIcon>
               </Popover.Target>
@@ -86,8 +103,8 @@ export function FooterBar({genImage}: FooterBarProps) {
                 withAsterisk
                 disabled = {!image}
             />
-            <Button disabled = {!image} color="green.1" onClick = {genImage}>Generate</Button>
-            <Tooltip label={"Reload"} position="top" transitionDuration={0}>
+            <Button className={classes.generate} disabled = {!image} onClick = {genImage} variant='gradient' gradient={{from: 'green.1', to: 'green.2', deg: 45}}>Generate</Button>
+            <Tooltip className={classes.reload} label={"Reload"} position="top" transitionDuration={0}>
                 <UnstyledButton>
                     <IconReload stroke={1.5} />
                 </UnstyledButton>
